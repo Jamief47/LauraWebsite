@@ -35,18 +35,26 @@ function App() {
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-brand-blue relative overflow-hidden"
+        className="bg-brand-blue relative overflow-hidden w-full h-[160px] sm:h-[275px] bg-[length:100%_auto] sm:bg-contain"
         style={{
-          height: "275px",
           backgroundImage: `url('images/background.png')`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat'
         }}
       >
+        <style>
+          {`
+            @media (min-width: 640px) {
+              header {
+                height: 275px !important;
+                background-size: contain !important;
+              }
+            }
+          `}
+        </style>
       </motion.header>
 
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-4 sm:py-16">
         <motion.section 
           className="max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}

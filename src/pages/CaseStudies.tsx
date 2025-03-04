@@ -11,16 +11,16 @@ function CaseStudies() {
         animate={{ opacity: 1, y: 0 }}
         className="bg-brand-blue relative overflow-hidden"
         style={{
-          height: "275px",
+          height: "clamp(150px, 30vh, 275px)",
           backgroundImage: `url('images/background2.png')`,
-          backgroundSize: 'contain',
+          backgroundSize: '100% auto',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
         }}
       >
       </motion.header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-4 sm:py-8">
         <motion.a 
           href="/"
           onClick={(e) => {
@@ -36,7 +36,7 @@ function CaseStudies() {
         </motion.a>
 
         <motion.section 
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto space-y-6 sm:space-y-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -44,10 +44,10 @@ function CaseStudies() {
           {/* Case Study Navigation */}
           <div className="mb-10">
             <h3 className="font-league-spartan text-xl mb-4 text-gray-700">Jump to case study:</h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
               <motion.a 
                 href="#luxury-networking" 
-                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors"
+                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -55,7 +55,7 @@ function CaseStudies() {
               </motion.a>
               <motion.a 
                 href="#influencer-facebook" 
-                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors"
+                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -63,7 +63,7 @@ function CaseStudies() {
               </motion.a>
               <motion.a 
                 href="#boxway-packaging" 
-                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors"
+                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -71,7 +71,7 @@ function CaseStudies() {
               </motion.a>
               <motion.a 
                 href="#brasserie" 
-                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors"
+                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -79,7 +79,7 @@ function CaseStudies() {
               </motion.a>
               <motion.a 
                 href="#facebook-ad-project" 
-                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors"
+                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -87,7 +87,7 @@ function CaseStudies() {
               </motion.a>
               <motion.a 
                 href="#boxway-linkedin-post" 
-                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors"
+                className="px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-league-spartan hover:bg-brand-yellow hover:text-brand-blue transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -99,73 +99,74 @@ function CaseStudies() {
           {/* Luxury Networking Club Case Study */}
           <motion.div 
             id="luxury-networking" 
-            className="mb-16 bg-brand-yellow p-8 rounded-lg"
+            className="mb-8 sm:mb-16 bg-brand-yellow p-4 sm:p-8 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="flex flex-col items-start mb-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="bg-white p-3 rounded-full shadow-sm">
-                  <img 
-                    src="images/casestudies/goodtimeslogo.png" 
-                    alt="The Good Times House Logo" 
-                    className="h-16 w-16 object-contain"
-                  />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-league-spartan font-semibold text-brand-blue">
-                    The Good Times House
-                  </h2>
-                  <p className="font-sanchez text-brand-blue">Luxury Private Members Club</p>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 w-full">
-                <div className="order-2 md:order-1 md:col-span-3">
-                  <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
-                    <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">
-                      Performance
-                    </h3>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-8 w-full">
+              <div className="order-2 md:order-1 md:col-span-3 space-y-4 sm:space-y-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-6">
+                  <div className="bg-white p-3 rounded-full shadow-sm">
                     <img 
-                      src="images/casestudies/performance.png" 
-                      alt="Performance metrics showing dramatic increases" 
-                      className="w-full h-auto rounded-lg"
+                      src="images/casestudies/goodtimeslogo.png" 
+                      alt="The Good Times House Logo" 
+                      className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
                     />
                   </div>
-                  
-                  <div>
-                    <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">Key highlights</h3>
-                    <ul className="list-disc pl-5 space-y-3 font-sanchez text-brand-blue">
-                      <li>Increased content reach by 536% within four weeks of management.</li>
-                      <li>Increased content interactions by 106% in four weeks of management.</li>
-                      <li>Increased CTR by 100% in four weeks of management.</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-6">
-                    <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">Customer feedback</h3>
-                    <blockquote className="italic font-sanchez text-brand-blue pl-4 border-l-4 border-brand-blue">
-                      "Thank you for all your hard work. We are very pleased with the outcome and we look forward to working with you again" - Mitch P
-                    </blockquote>
+                  <div className="text-center sm:text-left">
+                    <h2 className="text-xl sm:text-2xl font-league-spartan font-semibold text-brand-blue">
+                      The Good Times House
+                    </h2>
+                    <p className="font-sanchez text-brand-blue">Luxury Private Members Club</p>
                   </div>
                 </div>
                 
-                <div className="order-1 md:order-2 md:col-span-2">
-                  <div className="bg-transparent max-w-[280px] mx-auto">
-                    <div className="relative w-full pb-[200%] rounded-[40px] overflow-hidden">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src="/videos/goodtimesvideo.mp4" type="video/mp4" />
-                      </video>
-                    </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
+                  <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">
+                    Performance
+                  </h3>
+                  <img 
+                    src="images/casestudies/performance.png" 
+                    alt="Performance metrics showing dramatic increases" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                
+                <div>
+                  <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">Key highlights</h3>
+                  <ul className="list-disc pl-5 space-y-3 font-sanchez text-brand-blue">
+                    <li>Increased content reach by 536% within four weeks of management.</li>
+                    <li>Increased content interactions by 106% in four weeks of management.</li>
+                    <li>Increased CTR by 100% in four weeks of management.</li>
+                  </ul>
+                </div>
+                
+                <div className="mt-6">
+                  <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">Customer feedback</h3>
+                  <blockquote className="italic font-sanchez text-brand-blue pl-4 border-l-4 border-brand-blue">
+                    "Thank you for all your hard work. We are very pleased with the outcome and we look forward to working with you again" - Mitch P
+                  </blockquote>
+                </div>
+              </div>
+              
+              <div className="order-1 md:order-2 md:col-span-2">
+                <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                  <div className="relative w-full" style={{ 
+                    paddingBottom: "min(200%, 600px)",
+                    maxHeight: "min(90vh, 600px)" 
+                  }}>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover rounded-[40px]"
+                    >
+                      <source src="/videos/goodtimesvideo.mp4" type="video/mp4" />
+                    </video>
                   </div>
                 </div>
               </div>
@@ -265,18 +266,17 @@ function CaseStudies() {
                 </div>
                 
                 <div>
-                  <div className="bg-transparent max-w-[280px] mx-auto">
-                    <div className="relative w-full pb-[200%] rounded-[40px] overflow-hidden">
+                  <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                    <div className="relative w-full" style={{ 
+                      paddingBottom: "min(200%, 600px)",
+                      maxHeight: "min(90vh, 600px)" 
+                    }}>
                       <video
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                        style={{ 
-                          borderRadius: '40px',
-                          backgroundColor: 'black'
-                        }}
+                        className="absolute inset-0 w-full h-full object-cover rounded-[40px]"
                       >
                         <source src="/videos/weightlossdoctorvideo.mp4" type="video/mp4" />
                       </video>
@@ -287,85 +287,6 @@ function CaseStudies() {
             </div>
           </motion.div>
 
-          {/* Feedback & Influence Section */}
-          <motion.div 
-            id="feedback-influence" 
-            className="mb-16 bg-brand-blue p-8 rounded-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.01 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <h2 className="text-3xl font-league-spartan font-semibold text-brand-yellow mb-12">
-              Feedback & Influence.
-            </h2>
-
-            <div className="space-y-16">
-              {/* First Comment */}
-              <div className="flex items-start gap-8 relative">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-league-spartan text-brand-yellow mb-4">
-                    Positive feedback from aligned brands (12k followers).
-                  </h3>
-                </div>
-                <img 
-                  src="images/casestudies/Arrow.png" 
-                  alt="Decorative arrow" 
-                  className="absolute left-[35%] top-[40px] w-[100px] h-auto"
-                />
-                <div className="flex-1">
-                  <img 
-                    src="images/casestudies/insta.png" 
-                    alt="Instagram comment showing positive feedback" 
-                    className="w-full"
-                  />
-                </div>
-              </div>
-
-              {/* Second Comment */}
-              <div className="flex items-start gap-8 relative">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-league-spartan text-brand-yellow mb-4">
-                    Emma's Nutrition (30k followers), influencer relationship building.
-                  </h3>
-                </div>
-                <img 
-                  src="images/casestudies/Arrow.png" 
-                  alt="Decorative arrow" 
-                  className="absolute left-[35%] top-[40px] w-[100px] h-auto"
-                />
-                <div className="flex-1">
-                  <img 
-                    src="images/casestudies/insta2.png" 
-                    alt="Instagram comment from Emma's Nutrition" 
-                    className="w-full"
-                  />
-                </div>
-              </div>
-
-              {/* Third Comment */}
-              <div className="flex items-start gap-8 relative">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-league-spartan text-brand-yellow mb-4">
-                    Engaged comments from followers.
-                  </h3>
-                </div>
-                <img 
-                  src="images/casestudies/Arrow.png" 
-                  alt="Decorative arrow" 
-                  className="absolute left-[35%] top-[40px] w-[100px] h-auto"
-                />
-                <div className="flex-1">
-                  <img 
-                    src="images/casestudies/insta3.png" 
-                    alt="Instagram comment showing engagement" 
-                    className="w-full"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
 
           {/* BoxWay Packaging Case Study */}
           <motion.div 
@@ -419,14 +340,17 @@ function CaseStudies() {
                 </div>
                 
                 <div className="order-1 md:order-2 md:col-span-2">
-                  <div className="bg-transparent max-w-[280px] mx-auto">
-                    <div className="relative w-full pb-[200%] rounded-[40px] overflow-hidden">
+                  <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                    <div className="relative w-full" style={{ 
+                      paddingBottom: "min(200%, 600px)",
+                      maxHeight: "min(90vh, 600px)" 
+                    }}>
                       <video
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover rounded-[40px]"
                       >
                         <source src="/videos/boxawayvideo.mp4" type="video/mp4" />
                       </video>
@@ -500,14 +424,17 @@ function CaseStudies() {
                 </div>
                 
                 <div className="order-1 md:order-2 md:col-span-2">
-                  <div className="bg-transparent max-w-[280px] mx-auto">
-                    <div className="relative w-full pb-[200%] rounded-[40px] overflow-hidden">
+                  <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                    <div className="relative w-full" style={{ 
+                      paddingBottom: "min(200%, 600px)",
+                      maxHeight: "min(90vh, 600px)" 
+                    }}>
                       <video
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover rounded-[40px]"
                       >
                         <source src="/videos/newwavevideo.mp4" type="video/mp4" />
                       </video>
@@ -728,17 +655,17 @@ function CaseStudies() {
               
               <div className="grid grid-cols-1 gap-8 w-full">
                 {/* Little Imagineers Testimonial */}
-                <div className="bg-white/10 p-6 rounded-lg">
-                  <div className="flex items-start gap-6 mb-4">
+                <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4">
                     <div className="bg-white p-3 rounded-full shadow-sm flex-shrink-0">
                       <img 
                         src="images/clients/littleimagineers.png" 
                         alt="Little Imagineers Logo" 
-                        className="h-16 w-16 object-contain"
+                        className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
                       />
                     </div>
-                    <div>
-                      <blockquote className="font-sanchez text-white text-lg">
+                    <div className="text-center sm:text-left">
+                      <blockquote className="font-sanchez text-white text-base sm:text-lg">
                         "I've had a fantastic experience working with Laura over the past six months. Her contributions have been crucial to the launch of my business. She works efficiently in a very organised manner with excellent communication. It is remarkable to reflect on what we have achieved in such a short time!"
                       </blockquote>
                       <cite className="block mt-4 text-brand-yellow font-league-spartan">- Tom H</cite>
@@ -747,17 +674,17 @@ function CaseStudies() {
                 </div>
 
                 {/* BoxWay Packaging Testimonial */}
-                <div className="bg-white/10 p-6 rounded-lg">
-                  <div className="flex items-start gap-6 mb-4">
+                <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4">
                     <div className="bg-white p-3 rounded-full shadow-sm flex-shrink-0">
                       <img 
                         src="images/clients/boxway.png" 
                         alt="BoxWay Packaging Logo" 
-                        className="h-16 w-16 object-contain"
+                        className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
                       />
                     </div>
-                    <div>
-                      <blockquote className="font-sanchez text-white text-lg">
+                    <div className="text-center sm:text-left">
+                      <blockquote className="font-sanchez text-white text-base sm:text-lg">
                         "I just sent your post directly to some contacts and have two new business appoints from 30 minutes of it being posted! Well done on the post and really appreciate your efforts."
                       </blockquote>
                       <cite className="block mt-4 text-brand-yellow font-league-spartan">- Joe W</cite>
@@ -778,7 +705,7 @@ function CaseStudies() {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <motion.a
-              href="mailto:laura-fle999@hotmail.com?subject=Enquiry: Looking for More Details"
+              href="mailto:laura@wonkytooth.com?subject=Enquiry: Looking for More Details"
               className="inline-flex items-center gap-3 px-8 py-4 bg-brand-blue text-white rounded-full text-xl font-league-spartan hover:bg-opacity-90 transition-all transform hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -796,30 +723,14 @@ function CaseStudies() {
           Past Clients
         </h2>
         
-        <div className="relative w-full overflow-hidden bg-white/50 py-8">
+        <div className="relative w-full overflow-hidden bg-white/50 py-4 sm:py-8">
           <div className="flex animate-carousel">
-            {/* First set of logos */}
-            <div className="flex gap-8 items-center mx-4 min-w-max">
-              <img src="images/clients/tata.png" alt="TATA" className="h-16 object-contain client-logo" />
-              <img src="images/clients/boxway.png" alt="BoxWay Packaging Group" className="h-16 object-contain client-logo" />
-              <img src="images/clients/prometheus.png" alt="Prometheus" className="h-16 object-contain client-logo" />
-              <img src="images/clients/mellanox.png" alt="Mellanox Technologies" className="h-16 object-contain client-logo" />
-              <img src="images/clients/netfoundry.png" alt="NetFoundry" className="h-16 object-contain client-logo" />
-              <img src="images/clients/goodtimes.png" alt="The Good Times House" className="h-16 object-contain client-logo" />
-              <img src="images/clients/newwave.png" alt="New Wave Seafood" className="h-16 object-contain client-logo" />
-              <img src="images/clients/ricos.png" alt="Rico's" className="h-16 object-contain client-logo" />
-              <img src="images/clients/versa.png" alt="Versa Networks" className="h-16 object-contain client-logo" />
-              <img src="images/clients/britishhemp.png" alt="The British Hemp Co" className="h-16 object-contain client-logo" />
-              <img src="images/clients/apstra.png" alt="Apstra" className="h-16 object-contain client-logo" />
-              <img src="images/clients/kthealthcare.png" alt="KT Healthcare" className="h-16 object-contain client-logo" />
-              <img src="images/clients/bioenergetics.png" alt="Bioenergetics Brighton" className="h-16 object-contain client-logo" />
-              <img src="images/clients/bespoke.png" alt="Bespoke Getaways" className="h-16 object-contain client-logo" />
-              <img src="images/clients/weightlossdoctor.png" alt="Weight Loss Doctor" className="h-16 object-contain client-logo" />
-              <img src="images/clients/renewtrak.png" alt="RenewTrak" className="h-16 object-contain client-logo" />
-            </div>
-            {/* Duplicate set for seamless loop */}
-            <div className="flex gap-8 items-center mx-4 min-w-max">
-              <img src="images/clients/tata.png" alt="TATA" className="h-16 object-contain client-logo" />
+            <div className="flex gap-4 sm:gap-8 items-center mx-2 sm:mx-4 min-w-max">
+              <img 
+                src="images/clients/tata.png" 
+                alt="TATA" 
+                className="h-10 sm:h-16 object-contain client-logo" 
+              />
               <img src="images/clients/boxway.png" alt="BoxWay Packaging Group" className="h-16 object-contain client-logo" />
               <img src="images/clients/prometheus.png" alt="Prometheus" className="h-16 object-contain client-logo" />
               <img src="images/clients/mellanox.png" alt="Mellanox Technologies" className="h-16 object-contain client-logo" />
