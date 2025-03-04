@@ -9,25 +9,40 @@ function CaseStudies() {
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-brand-blue relative overflow-hidden"
-        style={{
-          height: "clamp(150px, 30vh, 275px)",
-          backgroundImage: `url('images/background2.png')`,
-          backgroundSize: '100% auto',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+        className="bg-brand-blue relative overflow-hidden w-full h-[160px] sm:h-[396px]"
       >
+        <div 
+          className="absolute inset-0 hidden sm:block"
+          style={{
+            backgroundImage: `url('images/background2.png')`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%'
+          }}
+        />
+        <div 
+          className="absolute inset-0 sm:hidden"
+          style={{
+            backgroundImage: `url('images/background2phone.png')`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%'
+          }}
+        />
       </motion.header>
 
-      <main className="container mx-auto px-4 py-4 sm:py-8">
+      <main className="container mx-auto px-4 py-4">
         <motion.a 
           href="/"
           onClick={(e) => {
             e.preventDefault();
             window.location.href = '/';
           }} 
-          className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-yellow transition-colors mb-6 font-league-spartan"
+          className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-yellow transition-colors mb-4 font-league-spartan"
           whileHover={{ x: -5 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
@@ -42,8 +57,8 @@ function CaseStudies() {
           transition={{ delay: 0.2 }}
         >
           {/* Case Study Navigation */}
-          <div className="mb-10">
-            <h3 className="font-league-spartan text-xl mb-4 text-gray-700">Jump to case study:</h3>
+          <div className="mb-6">
+            <h3 className="font-league-spartan text-xl mb-2 text-gray-700">Jump to case study:</h3>
             <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
               <motion.a 
                 href="#luxury-networking" 
@@ -99,21 +114,21 @@ function CaseStudies() {
           {/* Luxury Networking Club Case Study */}
           <motion.div 
             id="luxury-networking" 
-            className="mb-8 sm:mb-16 bg-brand-yellow p-4 sm:p-8 rounded-lg"
+            className="mb-8 bg-brand-yellow p-4 sm:p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-8 w-full">
-              <div className="order-2 md:order-1 md:col-span-3 space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 w-full">
+              <div className="order-1 md:order-1 md:col-span-3 space-y-4 sm:space-y-6">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-6">
                   <div className="bg-white p-3 rounded-full shadow-sm">
                     <img 
                       src="images/casestudies/goodtimeslogo.png" 
                       alt="The Good Times House Logo" 
-                      className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+                      className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                     />
                   </div>
                   <div className="text-center sm:text-left">
@@ -152,8 +167,8 @@ function CaseStudies() {
                 </div>
               </div>
               
-              <div className="order-1 md:order-2 md:col-span-2">
-                <div className="bg-transparent w-full max-w-[280px] mx-auto">
+              <div className="order-2 md:order-1 md:col-span-2">
+                <div className="bg-transparent w-full max-w-[240px] mx-auto mt-10">
                   <div className="relative w-full" style={{ 
                     paddingBottom: "min(200%, 600px)",
                     maxHeight: "min(90vh, 600px)" 
@@ -176,7 +191,7 @@ function CaseStudies() {
           {/* B2C Influencer Facebook Case Study */}
           <motion.div 
             id="influencer-facebook" 
-            className="mb-16 bg-brand-blue p-8 rounded-lg"
+            className="mb-8 bg-brand-blue p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -189,7 +204,7 @@ function CaseStudies() {
                   <img 
                     src="images/clients/weightlossdoctor.png" 
                     alt="Weight Loss Doctor Logo" 
-                    className="h-16 w-16 object-contain"
+                    className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                   />
                 </div>
                 <div>
@@ -200,7 +215,7 @@ function CaseStudies() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                 <div>
                   <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
                     <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">Before & After</h3>
@@ -266,7 +281,7 @@ function CaseStudies() {
                 </div>
                 
                 <div>
-                  <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                  <div className="bg-transparent w-full max-w-[240px] mx-auto">
                     <div className="relative w-full" style={{ 
                       paddingBottom: "min(200%, 600px)",
                       maxHeight: "min(90vh, 600px)" 
@@ -291,7 +306,7 @@ function CaseStudies() {
           {/* BoxWay Packaging Case Study */}
           <motion.div 
             id="boxway-packaging" 
-            className="mb-16 bg-brand-yellow p-8 rounded-lg"
+            className="mb-8 bg-brand-yellow p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -304,7 +319,7 @@ function CaseStudies() {
                   <img 
                     src="images/clients/boxway.png" 
                     alt="BoxWay Packaging Logo" 
-                    className="h-16 w-16 object-contain"
+                    className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                   />
                 </div>
                 <div>
@@ -315,7 +330,7 @@ function CaseStudies() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 w-full">
                 <div className="order-2 md:order-1 md:col-span-3">
                   <div className="bg-white p-3 rounded-lg shadow-sm mb-6">
                     <h3 className="font-league-spartan text-xl font-semibold mb-2 text-brand-blue">
@@ -340,7 +355,7 @@ function CaseStudies() {
                 </div>
                 
                 <div className="order-1 md:order-2 md:col-span-2">
-                  <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                  <div className="bg-transparent w-full max-w-[240px] mx-auto">
                     <div className="relative w-full" style={{ 
                       paddingBottom: "min(200%, 600px)",
                       maxHeight: "min(90vh, 600px)" 
@@ -364,7 +379,7 @@ function CaseStudies() {
           {/* The Brasserie Case Study */}
           <motion.div 
             id="brasserie" 
-            className="mb-16 bg-brand-blue p-8 rounded-lg"
+            className="mb-8 bg-brand-blue p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -377,7 +392,7 @@ function CaseStudies() {
                   <img 
                     src="images/clients/newwave.png" 
                     alt="The Brasserie Logo" 
-                    className="h-16 w-16 object-contain"
+                    className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                   />
                 </div>
                 <div>
@@ -388,7 +403,7 @@ function CaseStudies() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 w-full">
                 <div className="order-2 md:order-1 md:col-span-3">
                   <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
                     <h3 className="font-league-spartan text-xl font-semibold mb-4 text-brand-blue">Performance Metrics</h3>
@@ -424,7 +439,7 @@ function CaseStudies() {
                 </div>
                 
                 <div className="order-1 md:order-2 md:col-span-2">
-                  <div className="bg-transparent w-full max-w-[280px] mx-auto">
+                  <div className="bg-transparent w-full max-w-[240px] mx-auto">
                     <div className="relative w-full" style={{ 
                       paddingBottom: "min(200%, 600px)",
                       maxHeight: "min(90vh, 600px)" 
@@ -448,7 +463,7 @@ function CaseStudies() {
           {/* Facebook AD Project Case Study */}
           <motion.div 
             id="facebook-ad-project" 
-            className="mb-16 bg-brand-blue p-8 rounded-lg"
+            className="mb-8 bg-brand-blue p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -462,7 +477,7 @@ function CaseStudies() {
                   <img 
                     src="images/clients/newwave.png" 
                     alt="New Wave Seafood Logo" 
-                    className="h-16 w-16 object-contain"
+                    className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                   />
                 </div>
                 <div>
@@ -505,7 +520,7 @@ function CaseStudies() {
           {/* BoxWay LinkedIn Post Case Study */}
           <motion.div 
             id="boxway-linkedin-post" 
-            className="mb-16 bg-brand-yellow p-8 rounded-lg"
+            className="mb-8 bg-brand-yellow p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -560,7 +575,7 @@ function CaseStudies() {
 
           {/* Career Highlights Section */}
           <motion.div 
-            className="mb-16 bg-brand-yellow p-8 rounded-lg"
+            className="mb-8 bg-brand-yellow p-4 sm:p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -568,11 +583,11 @@ function CaseStudies() {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="flex flex-col items-start">
-              <h2 className="text-3xl font-league-spartan font-semibold text-brand-blue mb-6">
+              <h2 className="text-2xl font-league-spartan font-semibold text-brand-blue mb-4">
                 Career Highlights
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                 <div className="order-2 md:order-1">
                   <p className="font-sanchez text-brand-blue text-xl mb-6">
                     Two of my clients won significant awards while under my management.
@@ -641,19 +656,19 @@ function CaseStudies() {
 
           {/* Testimonials Section */}
           <motion.div 
-            className="mb-16 bg-brand-blue p-8 rounded-lg"
+            className="mb-8 bg-brand-blue p-4 sm:p-6 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="flex flex-col items-start mb-8">
-              <h2 className="text-3xl font-league-spartan font-semibold text-brand-yellow mb-8">
+            <div className="flex flex-col items-start mb-4">
+              <h2 className="text-2xl font-league-spartan font-semibold text-brand-yellow mb-4">
                 Testimonials
               </h2>
               
-              <div className="grid grid-cols-1 gap-8 w-full">
+              <div className="grid grid-cols-1 gap-4 w-full">
                 {/* Little Imagineers Testimonial */}
                 <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4">
@@ -697,7 +712,7 @@ function CaseStudies() {
 
           {/* Call to Action Section */}
           <motion.div 
-            className="mb-16 bg-brand-yellow p-16 rounded-lg text-center"
+            className="mb-8 bg-brand-yellow p-8 rounded-lg text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -718,8 +733,8 @@ function CaseStudies() {
       </main>
 
       {/* Past Clients Logo Carousel */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-league-spartan font-semibold text-brand-blue mb-8 text-center">
+      <div className="mb-8">
+        <h2 className="text-3xl font-league-spartan font-semibold text-brand-blue mb-4 text-center">
           Past Clients
         </h2>
         
